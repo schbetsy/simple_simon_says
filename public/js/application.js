@@ -1,8 +1,8 @@
 
 function add_color(){
-  console.log("clicked");
   $.post('/color',function (response) {
-    console.log(response);
+    var cell_selector = '#color_me li:nth-child('+response.cell+')';
+    $(cell_selector).css('background-color', response.color);
   });
 }
 
